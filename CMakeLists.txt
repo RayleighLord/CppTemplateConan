@@ -37,7 +37,6 @@ set(EXECUTABLE_NAME "main")
 
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
 
-include(FetchContent)
 include(Docs) 
 include(Warnings) 
 include(Tools)
@@ -61,15 +60,12 @@ endif()
 
 
 # Add external libraries
-FetchContent_Declare(
-    Catch2
-    GIT_REPOSITORY https://github.com/catchorg/Catch2
-    GIT_TAG v2.13.9
-    GIT_SHALLOW TRUE
-)
-FetchContent_MakeAvailable(Catch2)
-
-
+include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
+find_package(fmt)
+find_package(Catch2)
+find_package(OpenBLAS)
+ 
+  
 
 # Testing
 include(CTest)

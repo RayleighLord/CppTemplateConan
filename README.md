@@ -1,13 +1,14 @@
 # C++ Template Repository
 
-![Linux Build](https://github.com/RayleighLord/CppTemplate/workflows/Ubuntu%20CI%20Test/badge.svg)
-[![codecov](https://codecov.io/gh/RayleighLord/CppTemplate/branch/main/graph/badge.svg)](https://codecov.io/gh/RayleighLord/CppTemplate)
+![Linux Build](https://github.com/RayleighLord/CppTemplateConan/workflows/Ubuntu%20CI%20Test/badge.svg)
+[![codecov](https://codecov.io/gh/RayleighLord/CppTemplateConan/branch/main/graph/badge.svg)](https://codecov.io/gh/RayleighLord/CppTemplateConan)
 
 Install dependencies and prepare the build directory
 
 ```shell
 make install
-make prepare
+make setup_conan
+make prepare_conan
 ```
 
 - Executable for the app
@@ -26,6 +27,6 @@ cd app
 cd build
 cmake -DCMAKE_BUILD_TYPE=Debug ..
 cmake --build . --config Debug --target unit_tests
-cd tests
+cd test
 ./unit_tests
 ```

@@ -11,6 +11,9 @@ add_library(${LIBRARY_NAME} STATIC
     ${LIBRARY_HEADERS})
 target_include_directories(${LIBRARY_NAME} PUBLIC 
     ${LIBRARY_INCLUDES})
+target_link_libraries(${LIBRARY_NAME} PUBLIC 
+    fmt::fmt
+    OpenBLAS::OpenBLAS)
 
 target_set_warnings(
     TARGET

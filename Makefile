@@ -19,3 +19,12 @@ install_doc: install_min
 prepare:
 	rm -rf build
 	mkdir build
+
+setup_conan:
+	pip install conan --user
+	conan user
+
+prepare_conan:
+	rm -rf build
+	mkdir build
+	cd build && conan install .. $(CONAN_FLAGS)
