@@ -37,7 +37,8 @@ if(ENABLE_TESTING)
             "${PROJECT_SOURCE_DIR}/external/*"
             "${PROJECT_SOURCE_DIR}/test/*"
             "${PROJECT_SOURCE_DIR}/build/*"
-            "/usr/include/*")
+            "/usr/include/*"
+            "~/.conan/*")
         setup_target_for_coverage_lcov(
             NAME
             ${COVERAGE_MAIN}
