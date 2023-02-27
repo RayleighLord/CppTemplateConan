@@ -27,7 +27,7 @@ prepare:
 	mkdir build
 
 setup_conan:
-	pip install conan --user
+	pip install conan==1.58 --user
 	conan user
 
 prepare_conan:
