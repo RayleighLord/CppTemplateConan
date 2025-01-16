@@ -11,22 +11,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: install
-        run: |
-          sudo apt-get install gcovr lcov
+
       - name: prepare
         run: |
           make setup_conan
           make conan_d
+
       - name: configure
         run: |
-          cmake -H. -Bbuild -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DENABLE_COVERAGE=On
+          cmake -H. -Bbuild -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
+
       - name: building
         run: |
-          cmake --build build --config Debug --target coverage -j4
+          cmake --build build --config Debug -j4
+
       - name: testing
         run: |
-          cd build
-          cd test
+          cd build/test
           ./unit_tests
-          bash <(curl -s https://codecov.io/bash)
