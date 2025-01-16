@@ -60,7 +60,7 @@ endif()
 
 
 # Add external libraries
-include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
+include(${CMAKE_BINARY_DIR}/conan_toolchain.cmake)
 find_package(fmt)
 find_package(Catch2)
 find_package(OpenBLAS)
