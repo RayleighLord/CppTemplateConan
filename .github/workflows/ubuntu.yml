@@ -13,11 +13,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: install
         run: |
-          make install_tests
+          sudo apt-get install gcovr lcov
       - name: prepare
         run: |
           make setup_conan
-          make prepare_conan
+          make conan_d
       - name: configure
         run: |
           cmake -H. -Bbuild -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DENABLE_COVERAGE=On

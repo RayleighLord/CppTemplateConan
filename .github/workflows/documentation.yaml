@@ -15,11 +15,11 @@ jobs:
       - uses: actions/setup-python@v2
       - name: Install Docs
         run: |
-          make install_doc
+          make install
       - name: prepare
         run: |
           make setup_conan
-          make prepare_conan
+          make conan_d
       - name: configure
         run: |
           cmake -H. -Bbuild -G "Unix Makefiles" -DCMAKE_BUILD_TYPE="Debug"
