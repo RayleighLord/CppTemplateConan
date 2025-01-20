@@ -12,6 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: install conan
+        run: pip install --upgrade conan
+
       - name: prepare
         run: |
           make setup_conan
